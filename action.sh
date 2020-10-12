@@ -9,6 +9,8 @@ function v2ray() {
         shasum=$(sha256sum v2ray.src.tar.gz | awk '{print $1}')
         sed -i "s/PKG_HASH.*/PKG_HASH:=${shasum}/g" v2ray/Makefile
         rm -rf v2ray.src.tar.gz
+        git add v2ray/Makefile
+        git commit -am "update version to ${tag_name}"
     fi
 }
 
