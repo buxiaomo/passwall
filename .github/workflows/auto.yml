@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/auto.yml'
   schedule:
-    - cron: '0 0 * * FRI'
+    - cron: '00 18 * * *'
 
 jobs:
   update:
