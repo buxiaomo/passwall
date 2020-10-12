@@ -1,0 +1,31 @@
+name: Auto Update Version
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/auto.yml'
+  schedule:
+    - cron: '0 0 * * FRI'
+
+jobs:
+  update:
+    if: github.repository == 'buxiaomo/passwall'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Update v2ray version
+      run: |
+        sudo apt-get install jq -y
+        ./action.sh v2ray
+
+    - name: Push
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -am "update version to ${tag_name}"
+        git push -v origin master
