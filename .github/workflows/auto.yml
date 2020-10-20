@@ -22,9 +22,3 @@ jobs:
       run: |
         sudo apt-get install jq -y
         ./action.sh v2ray
-
-    - name: Push
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git push -v origin master
