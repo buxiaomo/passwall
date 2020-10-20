@@ -13,6 +13,7 @@ function v2ray() {
         git config --local user.name "GitHub Action"
         git add v2ray/Makefile
         git commit -am "update version to ${tag_name}"
+        git push
     fi
 }
 
