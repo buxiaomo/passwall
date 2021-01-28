@@ -1,0 +1,88 @@
+{
+    "admin/services/passwall": {
+        "title": "PassWall",
+        "action": {
+            "type": "firstchild"
+        },
+        "depends": {
+            "acl": [
+                "luci-app-passwall"
+            ],
+            "uci": {
+                "passwall": true
+            }
+        }
+    },
+    "admin/services/passwall/settings": {
+        "title": "基本设置",
+        "order": 1,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/settings"
+        }
+    },
+    "admin/services/passwall/node_list": {
+        "title": "节点列表",
+        "order": 2,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/node_list"
+        }
+    },
+    "services/passwall/auto_switch": {
+        "title": "自动切换",
+        "order": 3,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/auto_switch"
+        }
+    },
+    "services/passwall/other": {
+        "title": "高级设置",
+        "order": 4,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/other"
+        }
+    },
+    "services/passwall/haproxy": {
+        "title": "负载均衡",
+        "order": 5,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/haproxy"
+        }
+    },
+    "services/passwall/node_subscribe": {
+        "title": "节点列表",
+        "order": 6,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/node_subscribe"
+        }
+    },
+    "services/passwall/rule": {
+        "title": "自动更新",
+        "order": 7,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/rule"
+        }
+    },
+    "services/passwall/acl": {
+        "title": "访问控制",
+        "order": 8,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/acl"
+        }
+    },
+    "services/passwall/log": {
+        "title": "查看日志",
+        "order": 9,
+        "action": {
+            "type": "cbi",
+            "path": "passwall/log"
+        }
+    }
+}
